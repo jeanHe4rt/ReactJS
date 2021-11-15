@@ -4,7 +4,7 @@ import './index.css';
 
 const GreyImg = (props) => {
   return (
-    <img class="grey-img" src={props.img_url} alt="Planeta Mercurio"/>
+    <img className="grey-img" src={props.img_url} alt="Planeta Mercurio"/>
   )
 }
 
