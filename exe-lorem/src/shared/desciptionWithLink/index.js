@@ -2,21 +2,21 @@ import React,{Fragment} from "react";
 import "./index.css"
 
 const DescriptionWithLink = (props) => {
-  if(!props.text)
+  if(!props.description)
   return null;
-  if(props.url){
+  if(props.link){
     return (
       <Fragment>
-        <p>{props.text}</p>
+        <p>{props.description} </p>
         <p>
-          <a className="link"href={props.url} taget="_blanck">{props.name_url}</a>
+          <a className="link"href={props.link} taget="_blanck">{props.link}</a>
         </p>
       </Fragment>
     )
   }else {
     return (
       <Fragment>
-        <p><u>{props.text}</u></p>
+        <p><u>{props.description}</u></p>
       </Fragment>
     )
   }
