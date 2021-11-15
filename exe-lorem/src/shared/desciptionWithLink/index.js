@@ -3,11 +3,11 @@ import "./index.css"
 
 const DescriptionWithLink = (props) => {
   return (
-    <Fragment className="DescriptionWithLink">
+    <Fragment>
       <p>{props.text}</p>
-      <div>
+      <p>
         <a className="link"href={props.url} taget="_blanck">{props.name_url}</a>
-      </div>
+      </p>
     </Fragment>
   )
 }
