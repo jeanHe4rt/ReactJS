@@ -22,9 +22,6 @@ const Planets = () => {
     setPlanets([...planets, newPLanet])
   }
 
-
-  console.log(planets);
-
   return (
     <Fragment>
       <h3>Planet List</h3>

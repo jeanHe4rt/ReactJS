@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GreyImg from "../../../shared/grey-img";
 import DescriptionWithLink from "../../../shared/desciptionWithLink";
-
+import FormSatellites from "./formSatellites"
 
 async function getSatellites(id) {
   const response = await fetch(`http://localhost:3000/api/${id}.json`)
@@ -20,9 +20,14 @@ const Planet = (props) =>{
     })
   },[]);
 
+  const addSatellites = (newSatellites) => {
+    setSatellites([...satellites, newSatellites])
+  }
+
     return (
       <div>
         {title}
+        <FormSatellites addSatellites ={addSatellites}/>
         <DescriptionWithLink
           description= {props.description}
           link = {props.link}
