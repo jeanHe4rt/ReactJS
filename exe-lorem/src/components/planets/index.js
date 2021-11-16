@@ -1,9 +1,10 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Planet from "./planet";
 // import Mercurio from '../../shared/grey-img/Mercurio.png'
+import Form from "./form";
 
 export async function getPlanets(){
-  let response = await fetch('http://localhost:3001/api/planets.json')
+  let response = await fetch('http://localhost:3000/api/planets.json')
   let data = await response.json();
   return data;
 }
@@ -17,26 +18,20 @@ const Planets = () => {
     })
   }, []) // Roda só na hora da montagem.
 
-
-  const removeLast = () => {
-    let new_planets = [...planets];
-    new_planets.pop();
-    setPlanets(new_planets);
+  const addPlanet = (newPLanet) => {
+    setPlanets([...planets, newPLanet])
   }
 
-  const duplicatePlanet = () => {
-    let last_planet = planets[planets.length - 1];
-    setPlanets([...planets, last_planet]);
-  }
+
   console.log(planets);
 
   return (
     <Fragment>
       <h3>Planet List</h3>
-      <button onClick={removeLast}>Remove Last</button>
-      <button onClick={duplicatePlanet}>Duplicate Last</button>
       <hr/>
-      {planets.map( (planet, index) => 
+      <Form addPlanet={addPlanet}/>
+      <hr/>
+        {planets.map( (planet, index) => 
         <Planet 
         id ={planet.id}
         name={planet.name}

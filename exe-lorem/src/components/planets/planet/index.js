@@ -4,7 +4,7 @@ import DescriptionWithLink from "../../../shared/desciptionWithLink";
 
 
 async function getSatellites(id) {
-  const response = await fetch(`http://localhost:3001/api/${id}.json`)
+  const response = await fetch(`http://localhost:3000/api/${id}.json`)
   const data = await response.json()
   return data;
 }
