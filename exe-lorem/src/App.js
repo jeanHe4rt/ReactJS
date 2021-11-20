@@ -1,10 +1,19 @@
 import React from "react";
-import Planets from "./components/planets";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import PlanetsScreen from "./screens/Planets";
+import PlanetScreen from "./screens/Planet";
+import NotFoundScreen from "./screens/NotFound";
 
 function App() {
   return (
     <div className="App">
-      <Planets/>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<PlanetsScreen/>}/>
+          <Route exact path="/planet/:id" element={<PlanetScreen/>}/>
+          <Route path='*' element={<NotFoundScreen/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }

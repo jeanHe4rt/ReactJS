@@ -3,3 +3,7 @@
   height: 300px;
   filter: grayscale(100%);
 }
+
+.color-img {
+  width: 18.75rem;
+}
