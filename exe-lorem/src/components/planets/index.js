@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import Planet from "./planet";
-// import Mercurio from '../../shared/grey-img/Mercurio.png'
+import Planet from "./planetInPlanets";
 import Form from "./form";
 
 export async function getPlanets(){
